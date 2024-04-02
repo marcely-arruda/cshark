@@ -11,7 +11,7 @@ public class Pessoa {
 
     public string Nome {
         get{return nome;}
-        set{nome=value;} 
+        set{nome = value;} 
     }
     public int Idade {
         get {return idade;}
