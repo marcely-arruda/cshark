@@ -4,7 +4,7 @@ public class Pessoa {
     private String cpf;
     
     public Pessoa(string nome,int idade,string cpf) {
-        Nome = nome;
+        this.Nome = nome;
         Idade = idade;
         CPF = cpf;
     }
