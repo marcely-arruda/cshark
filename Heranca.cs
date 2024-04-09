@@ -70,26 +70,15 @@ public class Acessorio : Produto {
 }
 
 public class Colecionavel : Produto {
-    private int colecionavel;
+    private bool edicaoLimitada;
 
-    public Colecionavel(string nome,decimal preco,string descricao,string categoria,int colecionavel) : base(nome,preco,descricao,categoria) {
-         Colecionavel = colecionavel;
+    public Colecionavel(string nome,decimal preco,string descricao,string categoria,bool edicaoLimitada) : base(nome,preco,descricao,categoria) {
+         EdicaoLimitada = edicaoLimitada;
     }
 
-    public string Colecionavel{
-        get {return colecionavel;}
-        set {colecionavel = value;}
-    }
-}
-
-public class Program {
-    public static void main (string[] args) {
-        Produto produto;
-        produto = new ConsoleGame("PlayStation5", 5.900,"Console de Vídeo Game PlayStation 5 Slim com 1 Tera de armazenamento","Console",1024000);
-
-        Jogo jogo = new Jogo("Marvel s Spider-Man 2 PREMIUM" 299.9, "Jogo completo Marvel s Spider-Man 2 para PS5.", "Jogo PS5", "Ação e Aventura");
-
-        Acessorio acessorio = new Acessorio("oculos","500.00","Oculos preto de boa qualidade","Beleza","Quadrados")
+    public string EdicaoLimitada{
+        get {return edicaoLimitada;}
+        set {edicaoLimitada = value;}
     }
 }
 
@@ -98,8 +87,10 @@ public class Program {
         Produto produto;
         produto = new ConsoleGame("PlayStation5", 5.900,"Console de Vídeo Game PlayStation 5 Slim com 1 Tera de armazenamento","Console",1024000);
 
-        Jogo jogo = new Jogo("Marvel s Spider-Man 2 PREMIUM" 299.9, "Jogo completo Marvel s Spider-Man 2 para PS5.", "Jogo PS5", "Ação e Aventura");
+        Jogo jogo = new Jogo("Marvel s Spider-Man 2 PREMIUM", 299.9, "Jogo completo Marvel s Spider-Man 2 para PS5.", "Jogo PS5", "Ação e Aventura");
 
-        Acessorio acessorio = new Acessorio("oculos","500.00","Oculos preto de boa qualidade","Beleza","Quadrados")
+        Acessorio acessorio = new Acessorio("oculos 3d",500.00,"Oculos para jogos virtuais de boa qualidade","anaglifos","óculos de tecnologia passiva");
+
+        Colecionavel colecionavel = new Colecionavel("cartas virtuais",860.00,"carta completa em jogos no Steam","jogo online",true);
     }
 }
