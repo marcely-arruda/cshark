@@ -10,7 +10,7 @@ public class Personagem
     private double forca;
     private double agilidade;
     private double inteligencia;
-    private double [] armasEquipamentos;
+    private string [] armasEquipamentos;
 
 
     public Personagem(string nome,int nivel,double pontuacao,double vida,double forca,double agilidade,double inteligencia,string[] armasEquipamentos)
@@ -18,8 +18,8 @@ public class Personagem
         this.nome = nome;
         this.nivel = nivel;
         this.pontuacao = pontuacao;
-        this.vida - vida;
-        this.forca = forca
+        this.vida = vida;
+        this.forca = forca;
         this.agilidade = agilidade;
         this.inteligencia = inteligencia;
         this.armasEquipamentos = armasEquipamentos;
@@ -101,4 +101,32 @@ public class Personagem
         }
     }
 
+    public void UsarHabilidade(string habilidade, Personagem alvo){
+        Console.WriteLine($"{GetNome()} esta usando a habilidade {habilidade} em {alvo.GetNome()}."); 
+    }
+
+    public void SubirDeNivel(){
+        nivel++;
+        Console.WriteLine($"{GetNome()} subiu para o nivel {GetNivel()}!");
+    }
+    private void Morrer(){
+        Console.WriteLine($"{GetNome()} morreu.");
+    }
+}
+class Program{
+    static void Main(string[] args){
+        Personagem batman = new Personagem("Batman",1,0,100,90,80,100, new string[] {
+            "Multi-Batarangue","Lançador de Gel","Bomba de fumaça","Ultra Bat-Garra","Sintetizador de Voz"});
+
+            Console.WriteLine("Personagem Heroi");
+            Console.WriteLine($"Nome: {batman.GetNome()}");
+            Console.WriteLine($"Nivel: {batman.GetNivel()}");
+            Console.WriteLine($"Pontuacao do Batman: {batman.GetPontuacao()}");
+            Console.WriteLine($"Vida: {batman.GetVida()}");
+            Console.WriteLine($"Forca: {batman.GetForca()}");
+            Console.WriteLine($"Agilidade: {batman.GetAgilidade()}");
+            Console.WriteLine($"Inteligencia: {batman.GetInteligencia()}");
+            Console.WriteLine($"Armas e Equipamentos: {string.Join(",",batman.GetArmasEquipamentos())}");
+            Console.WriteLine("");
+    }
 }
