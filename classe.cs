@@ -128,5 +128,24 @@ class Program{
             Console.WriteLine($"Inteligencia: {batman.GetInteligencia()}");
             Console.WriteLine($"Armas e Equipamentos: {string.Join(",",batman.GetArmasEquipamentos())}");
             Console.WriteLine("");
+            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine("");
+
+            Personagem coringa = new Personagem("Coringa",1,0,100,70,65,85, new string[] {
+                "Gas do Riso","Flores que Esguicham Ácido","Baralhas de Cartas","Luva de Choque" });
+
+            Console.WriteLine("Personagem Inimigo");  
+            Console.WriteLine($"Nome: {coringa.GetNome()}");  
+            Console.WriteLine($"Nivel: {coringa.GetNivel()}");
+            Console.WriteLine($"Pontuacao do Batman: {coringa.GetPontuacao()}");
+            Console.WriteLine($"Vida: {coringa.GetVida()}");
+            Console.WriteLine($"Forca: {coringa.GetForca()}");
+            Console.WriteLine($"Agilidade: {coringa.GetAgilidade()}");
+            Console.WriteLine($"Inteligencia: {coringa.GetInteligencia()}");
+            Console.WriteLine($"Armas e Equipamentos: {string.Join(",",coringa.GetArmasEquipamentos())}");
+             Console.WriteLine("");
+            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine("");
+
     }
 }
