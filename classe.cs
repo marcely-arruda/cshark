@@ -87,9 +87,14 @@ public class Personagem
 
     public void SetArmasEquipamentos(string[] armasEquipamentos){
         this.armasEquipamentos = armasEquipamentos;
+        
     }
     public void Mover(string direcao, double distancia){
         Console.WriteLine($"{GetNome()} esta se movendo na direcao {direcao} por {distancia} passos.");
+    }
+        public void Atacar(Personagem alvo){
+            Console.WriteLine($"{GetNome()} esta atacando {alvo.GetNome()}.");
+
     }
 
     public void ReceberDano(double dano){
@@ -146,6 +151,23 @@ class Program{
              Console.WriteLine("");
             Console.WriteLine("-----------------------------------------------------------------------");
             Console.WriteLine("");
+            batman.Mover("norte",10);
+            coringa.Mover("sul",10);
+            batman.Atacar(coringa);
+            batman.UsarHabilidade("Multi-Batarangue",coringa);
+            coringa.ReceberDano(50);
+            batman.SetPontuacao(50);
+            Console.WriteLine($"Pontuacao do Batman : {batman.GetPontuacao()}");
+            coringa.UsarHabilidade("Gas do Riso",batman);
+            coringa.SetPontuacao(30);
+            Console.WriteLine($"Pontuacao do Coringa : {coringa.GetPontuacao()}");
+            batman.UsarHabilidade("Ultra Bat-Garra",coringa);
+            coringa.ReceberDano(999);
+            batman.SetPontuacao(100);
+            Console.WriteLine($"Pontuacao do Batman : {batman.GetPontuacao()}");
+            batman.SubirDeNivel();
+            Console.ReadLine();
 
     }
 }
+
